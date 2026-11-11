@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №5 — SPA vs MPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">SPA Architecture</div>
+        <nav class="nav-container" id="navContainer">
+            <a href="#catalog" class="nav-link is-active" data-target="catalog">Каталог / Огляд</a>
+            <a href="#details" class="nav-link" data-target="details">Специфікація</a>
+            <a href="#feedback" class="nav-link" data-target="feedback">Зворотний зв'язок</a>
+        </nav>
+        <!-- Індикатор глобального стану (веб-монітор) -->
+        <div class="state-monitor">
+            <span>Таймер сесії: <strong id="sessionTimer">00:00</strong></span>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section id="catalog" class="content-section">
+            <h2>Каталог продукції / Огляд</h2>
+            <p>Ласкаво просимо до розділу каталогу нашого односторінкового додатка (SPA). Перемикайтеся між вкладками у верхній панелі — сторінка не перезавантажується.</p>
+            <div class="card-grid">
+                <div class="card">Модуль А</div>
+                <div class="card">Модуль Б</div>
+                <div class="card">Модуль В</div>
+            </div>
+        </section>
+
+        <section id="details" class="content-section is-hidden">
+            <h2>Специфікація та архітектура</h2>
+            <p>Додаток спроектовано засобами чистого Vanilla JavaScript (ES6+). Навігація керується через маніпуляції з класами видимості та подією <code>hashchange</code> без деструктивного переписування DOM.</p>
+        </section>
+
+        <section id="feedback" class="content-section is-hidden">
+            <h2>Форма зворотного зв'язку</h2>
+            <form id="feedbackForm" class="form">
+                <div class="form-group">
+                    <label for="name">Ваше ім'я:</label>
+                    <input type="text" id="name" required placeholder="Введіть ім'я">
+                </div>
+                <div class="form-group">
+                    <label for="email">Електронна пошта:</label>
+                    <input type="email" id="email" required placeholder="name@example.com">
+                </div>
+                <button type="submit" class="btn">Надіслати</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
